@@ -115,8 +115,14 @@
 
         /* Mobile hero adjustments — solo < 768px */
         @media (max-width: 768px) {
+            .hero-section {
+                background-image: url('hero%20en%20celular.png');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
             .hero-bg-img {
-                object-position: right center;
+                display: none;
             }
             .hero-line1 {
                 font-size: clamp(1.6rem, 7vw, 2.2rem);
@@ -372,7 +378,7 @@
     </div>
 
     <!-- Hero Section -->
-    <section class="relative min-h-screen w-full flex items-center justify-center overflow-hidden pt-20">
+    <section class="hero-section relative min-h-screen w-full flex items-center justify-center overflow-hidden pt-20">
         <!-- Hero Background Image -->
         <div class="absolute inset-0 z-0">
             <img alt="Lobo Alfa Wolff Athlete Team" class="w-full h-full object-cover object-center hero-bg-img" src="hero%20foto%20lobo%20gym.png"/>
