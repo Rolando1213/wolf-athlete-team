@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html class="dark scroll-smooth" lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    
+    <!-- SEO Meta Tags -->
+    <title>Wolff Athlete Team | Preparación Física & Nutrición de Élite</title>
+    <meta name="description" content="Planes personalizados de nutrición, entrenamiento y seguimiento semanal en Colbún, Chile. De la mano de Fabián, preparador físico profesional. Sin dietas extremas, solo ciencia y disciplina."/>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Barlow+Condensed:wght@900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    
+    <!-- Tailwind CSS with custom configuration -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ff0000",       /* Crimson Wolf Red */
+                        "primary-alt": "#e61e25",   /* Wolf Red */
+                        "dark-red": "#b30000",      /* Dark Glowing Red */
+                        "background": "#080808",    /* Obsidian Core */
+                        "bg-secondary": "#121212",  /* Steel Surface */
+                        "surface-dim": "#131313",
+                        "surface-container": "#201f1f",
+                        "surface-container-high": "#2a2a2a",
+                        "surface-container-lowest": "#0e0e0e",
+                        "text-primary": "#ffffff",   /* Titanium White */
+                        "text-muted": "#b8b8b8",
+                        "outline-variant": "#603e39"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0px",           /* Sharp and aggressive brand persona */
+                        "md": "4px",                /* Soft utility corners */
+                        "lg": "8px",
+                        "xl": "12px",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "margin-mobile": "16px",
+                        "margin-desktop": "48px",
+                        "container-max": "1280px",
+                        "gutter": "24px",
+                        "unit": "8px"
+                    },
+                    fontFamily: {
+                        "display": ["Montserrat", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "mono": ["JetBrains Mono", "monospace"]
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Premium Animations & Custom Utility CSS -->
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        
+        /* Obsidian Text selection color */
+        ::selection {
+            background-color: #ff0000;
+            color: #ffffff;
+        }
+
+        /* Glowing titles and text shadows */
+        .text-glow-red {
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.8), 0 0 25px rgba(255, 0, 0, 0.4);
+        }
+
+        /* Hero title — FORJA TU MEJOR */
+        .hero-line1 {
+            font-family: 'Barlow Condensed', 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: clamp(2.6rem, 9vw, 6rem);
+            letter-spacing: -0.01em;
+            color: #ffffff;
+            -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.85);
+            paint-order: stroke fill;
+            text-shadow: 0 2px 20px rgba(255,255,255,0.08);
+            line-height: 1;
+            display: block;
+            text-transform: uppercase;
+        }
+
+        /* Hero title — VERSIÓN */
+        .hero-version {
+            font-family: 'Barlow Condensed', 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: clamp(5.5rem, 18vw, 13rem);
+            letter-spacing: -0.02em;
+            color: #e61e25;
+            text-shadow: 0 3px 10px rgba(140, 0, 0, 0.45);
+            line-height: 0.95;
+            display: block;
+            text-transform: uppercase;
+        }
+
+        /* Divisor rojo entre líneas del hero */
+        .hero-divider {
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ff0000, transparent);
+            margin: 6px auto 4px;
+            opacity: 0.7;
+        }
+        
+        .crimson-glow {
+            background: radial-gradient(circle, rgba(179,0,0,0.25) 0%, rgba(8,8,8,0) 70%);
+        }
+        
+        .smoke-overlay {
+            mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+            -webkit-mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+        }
+
+        /* Ambient light leak mouse tracker */
+        .light-leak {
+            position: fixed;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(230,30,37,0.06) 0%, rgba(0,0,0,0) 70%);
+            pointer-events: none;
+            z-index: 1;
+            transition: transform 0.2s cubic-bezier(0.1, 0.8, 0.2, 1);
+        }
+
+        /* Red pulsing effects */
+        @keyframes pulse-red {
+            0%, 100% { box-shadow: 0 0 15px rgba(255, 0, 0, 0.2); }
+            50% { box-shadow: 0 0 35px rgba(255, 0, 0, 0.6); }
+        }
+        .glow-red-pulse {
+            animation: pulse-red 3s infinite;
+        }
+        
+        /* Intense hover glow for buttons */
+        .btn-glow-intense:hover {
+            box-shadow: 0 0 35px rgba(255, 0, 0, 0.6);
+            filter: brightness(1.15);
+        }
+
+        /* Wolf Image float animation */
+        @keyframes wolf-float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        .animate-wolf-float {
+            animation: wolf-float 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        }
+        
+        /* Particle Float Up */
+        .hero-particle {
+            position: absolute;
+            background: #ff0000;
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0.6;
+            animation: float-up linear infinite;
+        }
+        @keyframes float-up {
+            from { transform: translateY(100vh) rotate(0deg); opacity: 0.6; }
+            to { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+        }
+
+        /* Rotating Animated Border for premium card */
+        .animated-border {
+            position: relative;
+            z-index: 1;
+        }
+        .animated-border::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: inherit;
+            background: linear-gradient(45deg, #ff0000, #b30000, #ffffff, #ff0000);
+            background-size: 250% 250%;
+            animation: gradient-border 4s linear infinite;
+            z-index: -1;
+        }
+        @keyframes gradient-border {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Custom Scroll Reveal Classes */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .reveal-active {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+
+        .reveal-cascade > * {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .reveal-cascade.reveal-active > * {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Custom styling for card animations and grid */
+        .service-card {
+            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: #ff0000;
+            box-shadow: 0 10px 30px rgba(255, 0, 0, 0.15);
+        }
+
+        /* Scrollbar customizing */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #080808;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2a2a2a;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ff0000;
+        }
+
+        /* Line animation in methodology section */
+        @keyframes draw-line {
+            from { height: 0; opacity: 0; }
+            to { height: 100%; opacity: 1; }
+        }
+        .method-line-active {
+            animation: draw-line 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        /* Hide scrollbars for sliders */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Gym Photo Collage Layout */
+        .gym-collage {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 220px 220px 220px;
+            gap: 8px;
+        }
+        .gym-collage .collage-item:nth-child(1) { grid-column: 1; grid-row: 1 / 3; }
+        .gym-collage .collage-item:nth-child(2) { grid-column: 2; grid-row: 1; }
+        .gym-collage .collage-item:nth-child(3) { grid-column: 3; grid-row: 1; }
+        .gym-collage .collage-item:nth-child(4) { grid-column: 2 / 4; grid-row: 2; }
+        .gym-collage .collage-item:nth-child(5) { grid-column: 1; grid-row: 3; }
+        .gym-collage .collage-item:nth-child(6) { grid-column: 2 / 4; grid-row: 3; }
+        @media (max-width: 768px) {
+            .gym-collage {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: none;
+                grid-auto-rows: 160px;
+            }
+            .gym-collage .collage-item {
+                grid-column: auto !important;
+                grid-row: auto !important;
+            }
+            .gym-collage .collage-item:nth-child(1) {
+                grid-column: 1 / 3 !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-background text-text-primary font-body antialiased overflow-x-hidden">
+
+    <!-- Ambient Mouse Light Leaks -->
+    <div class="light-leak top-[-20%] left-[-20%]" id="leak-1"></div>
+    <div class="light-leak bottom-[-20%] right-[-20%]" id="leak-2"></div>
+
+    <!-- Navigation Header -->
+    <header class="fixed top-0 w-full z-50 bg-background/85 backdrop-blur-lg border-b border-white/5 transition-transform duration-300 shadow-[0_4px_30px_rgba(255,0,0,0.05)]" id="main-header">
+        <div class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+            <!-- Brand Logo -->
+            <div class="flex items-center gap-3">
+                <div class="h-12 w-12 rounded-full overflow-hidden flex-shrink-0">
+                    <img alt="Wolf Athlete Team Logo" class="w-full h-full object-cover scale-[1.28] origin-center" src="logo.jpeg"/>
+                </div>
+                <span class="font-display text-lg md:text-xl font-black tracking-widest text-text-primary">Wolf Athlete Team</span>
+            </div>
+            
+            <!-- Desktop Links -->
+            <nav class="hidden lg:flex items-center gap-8">
+                <a class="font-display text-xs font-semibold uppercase tracking-widest text-text-muted hover:text-primary transition-colors duration-200" href="#sobre">Fabián</a>
+                <a class="font-display text-xs font-semibold uppercase tracking-widest text-text-muted hover:text-primary transition-colors duration-200" href="#pilares">Método</a>
+                <a class="font-display text-xs font-semibold uppercase tracking-widest text-text-muted hover:text-primary transition-colors duration-200" href="#resultados">Resultados</a>
+                <a class="font-display text-xs font-semibold uppercase tracking-widest text-text-muted hover:text-primary transition-colors duration-200" href="#planes">Planes</a>
+                <a class="font-display text-xs font-semibold uppercase tracking-widest text-text-muted hover:text-primary transition-colors duration-200" href="#como-funciona">Proceso</a>
+            </nav>
+            
+            <!-- Mobile Hamburger Button -->
+            <button class="lg:hidden text-text-primary flex items-center" id="menu-btn" aria-label="Abrir Menú">
+                <span class="material-symbols-outlined text-3xl">menu</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer Menu -->
+    <div class="fixed inset-0 bg-black/85 z-[60] backdrop-blur-md hidden lg:hidden" id="drawer">
+        <div class="h-full w-80 bg-bg-secondary border-r border-white/5 flex flex-col p-8 transform -translate-x-full transition-transform duration-300 shadow-2xl" id="drawer-content">
+            <div class="flex justify-between items-center mb-10">
+                <span class="text-primary font-display text-lg font-black tracking-widest uppercase">WOLFF ELITE</span>
+                <button class="text-text-primary flex items-center" id="close-btn" aria-label="Cerrar Menú">
+                    <span class="material-symbols-outlined text-3xl">close</span>
+                </button>
+            </div>
+            <div class="flex flex-col gap-2">
+                <a class="flex items-center gap-4 p-4 text-text-muted hover:bg-white/5 hover:text-primary transition-all border-l-2 border-transparent hover:border-primary font-display text-sm uppercase tracking-widest" href="#sobre" onclick="closeDrawer()">
+                    <span class="material-symbols-outlined text-xl">person</span>
+                    <span>SOBRE FABIÁN</span>
+                </a>
+                <a class="flex items-center gap-4 p-4 text-text-muted hover:bg-white/5 hover:text-primary transition-all border-l-2 border-transparent hover:border-primary font-display text-sm uppercase tracking-widest" href="#pilares" onclick="closeDrawer()">
+                    <span class="material-symbols-outlined text-xl">fitness_center</span>
+                    <span>MÉTODO</span>
+                </a>
+                <a class="flex items-center gap-4 p-4 text-text-muted hover:bg-white/5 hover:text-primary transition-all border-l-2 border-transparent hover:border-primary font-display text-sm uppercase tracking-widest" href="#resultados" onclick="closeDrawer()">
+                    <span class="material-symbols-outlined text-xl">analytics</span>
+                    <span>RESULTADOS</span>
+                </a>
+                <a class="flex items-center gap-4 p-4 text-text-muted hover:bg-white/5 hover:text-primary transition-all border-l-2 border-transparent hover:border-primary font-display text-sm uppercase tracking-widest" href="#planes" onclick="closeDrawer()">
+                    <span class="material-symbols-outlined text-xl">payments</span>
+                    <span>PLANES</span>
+                </a>
+                <a class="flex items-center gap-4 p-4 text-text-muted hover:bg-white/5 hover:text-primary transition-all border-l-2 border-transparent hover:border-primary font-display text-sm uppercase tracking-widest" href="#como-funciona" onclick="closeDrawer()">
+                    <span class="material-symbols-outlined text-xl">route</span>
+                    <span>PROCESO</span>
+                </a>
+            </div>
+            
+            <div class="mt-auto">
+                <a class="w-full inline-flex items-center justify-center bg-primary text-text-primary font-display text-xs font-black tracking-widest py-4 btn-glow-intense border border-primary" href="#contacto" onclick="closeDrawer()">
+                    COMENZAR AHORA
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen w-full flex items-center justify-center overflow-hidden pt-20">
+        <!-- Hero Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img alt="Lobo Alfa Wolff Athlete Team" class="w-full h-full object-cover object-center" src="hero%20foto%20lobo%20gym.png"/>
+            <div class="absolute inset-0 bg-black/55"></div>
+        </div>
+        <div class="absolute inset-0 z-10 pointer-events-none" id="particles-container"></div>
+        
+        <!-- Text Overlay -->
+        <div class="relative z-30 flex flex-col items-start text-left pl-[8%] pr-6 md:pl-[10%] w-full py-12">
+            <h1 class="flex flex-col items-start text-left leading-none mb-6">
+                <span class="hero-line1">FORJA TU MEJOR</span>
+                <span class="hero-divider"></span>
+                <span class="hero-version">VERSIÓN</span>
+            </h1>
+            <p class="max-w-lg font-body text-sm text-white/90 mb-10 leading-relaxed">
+                Planes personalizados de nutrición, entrenamiento y seguimiento semanal con un preparador físico real. Sin dietas extremas, solo ciencia y disciplina con Fabián.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                <a class="inline-flex items-center justify-center bg-primary text-text-primary px-8 py-4 font-display font-black text-xs uppercase tracking-widest border border-primary transition-all duration-300 hover:scale-105 active:scale-95 btn-glow-intense" href="#contacto">
+                    ASESORÍA WHATSAPP
+                </a>
+            </div>
+        </div>
+        
+        <!-- Bottom gradient fade -->
+        <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-background to-transparent z-40 pointer-events-none"></div>
+    </section>
+
+    <!-- Sobre Fabián Section -->
+    <section class="relative py-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto overflow-hidden scroll-reveal" id="sobre">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- Portrait Image -->
+            <div class="lg:col-span-5 relative group">
+                <div class="absolute -inset-4 bg-primary/20 blur-3xl rounded-full opacity-40 group-hover:opacity-80 transition-opacity duration-700"></div>
+                <div class="relative border-4 border-white/5 hover:border-primary/50 transition-colors duration-500 rounded-lg overflow-hidden group">
+                    <img alt="Fabián Wolff Athlete Team" class="w-full h-[450px] md:h-[550px] object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105" src="foto profesor.png"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60"></div>
+                </div>
+            </div>
+            
+            <!-- Description Bio -->
+            <div class="lg:col-span-7 flex flex-col gap-6">
+                <span class="text-primary font-display font-bold text-xs uppercase tracking-[0.3em]">EL CREADOR DEL MÉTODO</span>
+                <h2 class="font-display font-black text-3xl md:text-5xl uppercase tracking-tighter leading-tight">
+                    FABIÁN | PREPARADOR FÍSICO
+                </h2>
+                <p class="font-body text-base md:text-lg text-text-muted leading-relaxed">
+                    Soy Fabián, Preparador Físico Profesional con especialización en nutrición deportiva. Mi enfoque no se basa en tendencias pasajeras o dietas extremas de moda, sino en ciencia aplicada al rendimiento humano y la sostenibilidad.
+                </p>
+                <p class="font-body text-base md:text-lg text-text-muted leading-relaxed">
+                    Llevo años guiando a atletas y personas decididas en Chile a construir disciplina y forjar su mejor versión física mediante un acompañamiento real, métricas precisas y rutinas estructuradas paso a paso.
+                </p>
+                
+                <!-- Animated Stats Counters -->
+                <div class="grid grid-cols-3 gap-4 border-t border-white/5 pt-8 mt-4" id="stats-section">
+                    <div class="flex flex-col">
+                        <span class="font-display text-4xl md:text-5xl font-black text-primary italic stat-counter" data-target="100">+0</span>
+                        <span class="font-display text-[10px] font-bold uppercase tracking-widest text-text-muted mt-1">Alumnos Activos</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-display text-4xl md:text-5xl font-black text-primary italic stat-counter" data-target="1000">+0</span>
+                        <span class="font-display text-[10px] font-bold uppercase tracking-widest text-text-muted mt-1">Horas Coaching</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-display text-4xl md:text-5xl font-black text-primary italic stat-counter" data-target="95">0%</span>
+                        <span class="font-display text-[10px] font-bold uppercase tracking-widest text-text-muted mt-1">Casos de Éxito</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Los 3 Pilares Section -->
+    <section class="py-24 bg-bg-secondary border-y border-white/5" id="pilares">
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+            <div class="text-center mb-16 scroll-reveal">
+                <span class="text-primary font-display font-bold text-xs uppercase tracking-[0.3em]">CÓMO TRABAJAMOS</span>
+                <h2 class="font-display font-black text-3xl md:text-5xl uppercase tracking-tighter mt-3 text-glow-red">
+                    LOS 3 PILARES DEL CAMBIO
+                </h2>
+                <div class="w-20 h-1 bg-primary mx-auto mt-6"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter reveal-cascade">
+                <!-- Pilar 1 -->
+                <div class="bg-background p-8 border border-white/5 service-card relative group">
+                    <div class="absolute top-0 left-0 w-full h-[3px] bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                    <div class="h-14 w-14 rounded-full bg-primary/10 flex items-center justify-center mb-8 text-primary">
+                        <span class="material-symbols-outlined text-3xl">restaurant_menu</span>
+                    </div>
+                    <h3 class="font-display text-xl font-black uppercase tracking-tight text-text-primary mb-4">
+                        Plan de Alimentación
+                    </h3>
+                    <p class="font-body text-text-muted text-sm md:text-base leading-relaxed">
+                        Adaptado a tu biotipo, horarios y metas. Sin pasar hambre ni recurrir a dietas insostenibles. Priorizamos comida de verdad, ajustando calorías y macronutrientes de forma científica.
+                    </p>
+                </div>
+                
+                <!-- Pilar 2 -->
+                <div class="bg-background p-8 border border-white/5 service-card relative group">
+                    <div class="absolute top-0 left-0 w-full h-[3px] bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                    <div class="h-14 w-14 rounded-full bg-primary/10 flex items-center justify-center mb-8 text-primary">
+                        <span class="material-symbols-outlined text-3xl">fitness_center</span>
+                    </div>
+                    <h3 class="font-display text-xl font-black uppercase tracking-tight text-text-primary mb-4">
+                        Plan de Entrenamiento
+                    </h3>
+                    <p class="font-body text-text-muted text-sm md:text-base leading-relaxed">
+                        Diseñado para la máxima eficiencia. Rutinas estructuradas basadas en sobrecarga progresiva y técnica impecable. Adaptadas para gimnasio o entrenamiento en casa según tu disponibilidad.
+                    </p>
+                </div>
+                
+                <!-- Pilar 3 -->
+                <div class="bg-background p-8 border border-white/5 service-card relative group">
+                    <div class="absolute top-0 left-0 w-full h-[3px] bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                    <div class="h-14 w-14 rounded-full bg-primary/10 flex items-center justify-center mb-8 text-primary">
+                        <span class="material-symbols-outlined text-3xl">monitoring</span>
+                    </div>
+                    <h3 class="font-display text-xl font-black uppercase tracking-tight text-text-primary mb-4">
+                        Seguimiento Semanal
+                    </h3>
+                    <p class="font-body text-text-muted text-sm md:text-base leading-relaxed">
+                        El secreto de los resultados. Revisiones semanales de peso, medidas y sensaciones con Fabián para realizar ajustes precisos a tus planes y evitar estancamientos en el proceso.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resultados Section -->
+    <section class="relative overflow-hidden py-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto" id="resultados">
+        <div class="absolute inset-0 z-0 pointer-events-none"><img alt="" class="w-full h-full object-cover object-top opacity-25" src="fondo%202.png"/></div>
+        <div class="text-center mb-16 scroll-reveal">
+            <span class="text-primary font-display font-bold text-xs uppercase tracking-[0.3em]">CASOS DE ÉXITO</span>
+            <h2 class="font-display font-black text-3xl md:text-5xl uppercase tracking-tighter mt-3">
+                CAMBIOS REALES DE ALUMNOS
+            </h2>
+            <p class="font-body text-text-muted mt-4 max-w-xl mx-auto">
+                Olvídate de las promesas vacías. Estos son los resultados sostenibles alcanzados por nuestros alumnos mediante esfuerzo y guía profesional.
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter reveal-cascade">
+            <!-- Testimonio 1 -->
+            <div class="group bg-bg-secondary border border-white/5 overflow-hidden flex flex-col">
+                <div class="relative overflow-hidden aspect-square">
+                    <img alt="Antes y después Pérdida de Grasa Alumno Wolff" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105" src="cambio%20fisico.jpeg"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80 group-hover:opacity-40 transition-opacity"></div>
+                    <div class="absolute bottom-4 left-4">
+                        <span class="bg-primary/95 text-text-primary px-3 py-1 font-display text-[10px] font-black uppercase tracking-wider">
+                            PÉRDIDA DE GRASA
+                        </span>
+                    </div>
+                </div>
+                <div class="p-6 border-t border-white/5">
+                    <h3 class="font-display text-lg font-black uppercase tracking-tight text-primary">CARLOS R.</h3>
+                    <p class="font-mono text-xs text-text-muted mt-1">40 Días de Proceso</p>
+                    <p class="font-body text-sm text-text-muted mt-3 leading-relaxed">
+                        "El cambio de alimentación fue clave. Logré perder grasa abdominal sin pasar hambre y sintiéndome con más energía en el día."
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Testimonio 2 -->
+            <div class="group bg-bg-secondary border border-white/5 overflow-hidden flex flex-col">
+                <div class="relative overflow-hidden aspect-square">
+                    <img alt="Antes y después Recomposición Alumna Wolff" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_f0PN-esoQTLAnHVdXp4do58WDQnbea_wgFB9c6nmhkZToi-kCdEWoJcAaC8ihmlbb9WoHsQcWVcuQsKU6H-Epj4IsK6ID67SJp0MpAhJw6v9ABHbMmx8E5R2sriAFb77co-FzdLvFETs2mHILZblVtVKEc49WnP5fQGlfRwz6eS-bMFyveo_N45YxCIAiR45W5sJkhrlhE1ZqVBkbYq7KKxeyxxoeAIT0rV7DLf7K2gp8N94R8-QwmSXnMnrLl_2791Jq3CN-w"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80 group-hover:opacity-40 transition-opacity"></div>
+                    <div class="absolute bottom-4 left-4">
+                        <span class="bg-primary/95 text-text-primary px-3 py-1 font-display text-[10px] font-black uppercase tracking-wider">
+                            DEFINICIÓN MUSCULAR
+                        </span>
+                    </div>
+                </div>
+                <div class="p-6 border-t border-white/5">
+                    <h3 class="font-display text-lg font-black uppercase tracking-tight text-primary">EDUARDO J.</h3>
+                    <p class="font-mono text-xs text-text-muted mt-1">5 Meses de Proceso</p>
+                    <p class="font-body text-sm text-text-muted mt-3 leading-relaxed">
+                        "Llevaba tiempo entrenando pero el abdomen no aparecía. Fabián ajustó mi dieta sin quitarme músculo y en pocas semanas empecé a ver la vascularización que tanto buscaba. El seguimiento semanal fue clave."
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Testimonio 3 -->
+            <div class="group bg-bg-secondary border border-white/5 overflow-hidden flex flex-col">
+                <div class="relative overflow-hidden aspect-square">
+                    <img alt="Antes y después Definición Alumno Wolff" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBB0DAfW8oSXPWXA3VLNF13aLYEitX_179JBoeR9TjJi-nn1ZrxUKfbtjzwonjbbklFb41yCgw2EeQ0uNpV-6PEgfEDvc4r5P-Q8QVSnGYD161GASY4_JkFImPqY2qEQODo10eZtaU2CCpTK3JAG3YaRn0lXQq_U8Gf1jSfpP5EtYeyycPc215hs2yTmxjwIViLWqVm1wF05E2YuYkV97CRBg_81fue2KEbCWGbWt67l1PhWR1CVy2Ub_P2M71xkRpZt0XNz7cQRg"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80 group-hover:opacity-40 transition-opacity"></div>
+                    <div class="absolute bottom-4 left-4">
+                        <span class="bg-primary/95 text-text-primary px-3 py-1 font-display text-[10px] font-black uppercase tracking-wider">
+                            RECOMPOSICIÓN CORPORAL
+                        </span>
+                    </div>
+                </div>
+                <div class="p-6 border-t border-white/5">
+                    <h3 class="font-display text-lg font-black uppercase tracking-tight text-primary">JORGE L.</h3>
+                    <p class="font-mono text-xs text-text-muted mt-1">1 Mes de Proceso</p>
+                    <p class="font-body text-sm text-text-muted mt-3 leading-relaxed">
+                        "Partí con harta grasa y poco músculo. Con el método de Fabián logré cambiar mi cuerpo al mismo tiempo: bajé grasa y gané masa. Me siento más fuerte y me veo mejor que nunca."
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mt-12 text-center scroll-reveal">
+            <a class="inline-flex items-center gap-3 text-primary font-display text-xs font-black uppercase tracking-wider hover:text-white transition-colors duration-300" href="https://www.instagram.com/wolf.athlete.team/" target="_blank">
+                VER MÁS EN INSTAGRAM <span class="material-symbols-outlined text-lg">arrow_forward</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Planes y Precios Section -->
+    <section class="py-24 bg-bg-secondary border-y border-white/5" id="planes">
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+            <div class="text-center mb-16 scroll-reveal">
+                <span class="text-primary font-display font-bold text-xs uppercase tracking-[0.3em]">INVIERTE EN TI</span>
+                <h2 class="font-display font-black text-3xl md:text-5xl uppercase tracking-tighter mt-3 text-glow-red">
+                    PROGRAMAS Y PLANES
+                </h2>
+                <p class="font-body text-text-muted mt-4">Sin contratos de permanencia ni cobros automáticos ocultos.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch pt-4">
+                
+                <!-- Plan 1 Mes -->
+                <div class="bg-background border border-white/5 p-8 flex flex-col justify-between hover:border-white/20 transition-all duration-300">
+                    <div>
+                        <h3 class="font-display text-xl font-black uppercase tracking-tight text-text-primary mb-2">PLAN 1 MES</h3>
+                        <div class="font-display text-4xl md:text-5xl font-black text-primary italic my-6 flex items-baseline">
+                            $40.000 <span class="font-body text-xs text-text-muted tracking-widest font-normal uppercase ml-2">CLP</span>
+                        </div>
+                        <ul class="flex flex-col gap-4 border-t border-white/5 pt-6">
+                            <li class="flex items-center gap-3 font-body text-sm text-text-muted">
+                                <span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                                <span>Plan de alimentación personalizado</span>
+                            </li>
+                            <li class="flex items-center gap-3 font-body text-sm text-text-muted">
+                                <span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                                <span>Plan de entrenamiento estructurado</span>
+                            </li>
+                            <li class="flex items-center gap-3 font-body text-sm text-text-muted">
+                                <span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                                <span>Revisiones y consultas durante 30 días</span>
+                            </li>
+                            <li class="flex items-center gap-3 font-body text-sm text-text-muted">
+                                <span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                                <span>Resolución de dudas por WhatsApp</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-8">
+                        <button onclick="selectPlan('1 Mes')" class="w-full py-4 border border-white/20 hover:border-primary text-text-primary hover:bg-primary font-display text-xs font-black uppercase tracking-widest transition-all duration-300">
+                            SELECCIONAR PLAN
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Plan 3 Meses (Popular) -->
+                <div class="bg-background animated-border p-8 flex flex-col justify-between shadow-2xl hover:scale-[1.02] transition-transform duration-300 relative">
+                    <!-- Overlay background to block dynamic border overflow -->
+                    <div class="absolute inset-0 bg-[#0e0e0e] z-0"></div>
+                    
+                    <div class="relative z-10 w-full flex flex-col justify-between h-full">
+                        <div>
+                            <div class="absolute -top-12 left-1/2 -translate-x-1/2 bg-primary text-text-primary px-4 py-1.5 font-display text-[9px] font-black uppercase tracking-widest rounded-full shadow-lg border border-primary-alt">
+                                MÁS POPULAR
+                            </div>
+                            <h3 class="font-display text-xl font-black uppercase tracking-tight text-text-primary mb-2 mt-2">PLAN 3 MESES</h3>
+                            <div class="font-display text-4xl md:text-5xl font-black text-primary italic my-6 flex items-baseline">
+                                $105.000 <span class="font-body text-xs text-text-muted tracking-widest font-normal uppercase ml-2">CLP</span>
+                            </div>
+                            <ul class="flex flex-col gap-4 border-t border-white/5 pt-6">
+                                <li class="flex items-center gap-3 font-body text-sm text-text-primary font-semibold">
+                                    <span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                                    <span>Plan nutricional dinámico y evolutivo</span>
+                                </li>
+                                <li class="flex items-center gap-3 font-body text-sm text-text-primary font-semibold">
+                                    <span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                                    <span>Rutinas mensuales adaptadas al progreso</span>
+                                </li>
+                                <li class="flex items-center gap-3 font-body text-sm text-text-primary font-semibold">
+                                    <span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                                    <span>Revisiones de peso y medidas semanales</span>
+                                </li>
+                                <li class="flex items-center gap-3 font-body text-sm text-text-primary font-semibold">
+                                    <span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                                    <span>Contacto 24/7 con Fabián</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mt-8">
+                            <button onclick="selectPlan('3 Meses')" class="w-full py-4 bg-primary text-text-primary font-display text-xs font-black uppercase tracking-widest transition-all duration-300 btn-glow-intense border border-primary">
+                                ADQUIRIR PLAN POPULAR
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Plan Presencial -->
+                <div class="bg-background border border-white/5 p-8 flex flex-col justify-between hover:border-white/20 transition-all duration-300">
+                    <div>
+                        <h3 class="font-display text-xl font-black uppercase tracking-tight text-text-primary mb-2">WOLFF CLASSIC GYM</h3>
+                        <div class="font-display text-4xl md:text-5xl font-black text-primary italic my-6 flex items-baseline">
+                            Desde $20k <span class="font-body text-xs text-text-muted tracking-widest font-normal uppercase ml-2">CLP / SESIÓN</span>
+                        </div>
+                        <ul class="flex flex-col gap-4 border-t border-white/5 pt-6">
+                            <li class="flex items-center gap-3 font-body text-sm text-text-muted">
+                                <span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                                <span>Rutina para alumno principiante</span>
+                            </li>
+                            <li class="flex items-center gap-3 font-body text-sm text-text-muted">
+                                <span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                                <span>Ubicación en Colbún, Chile</span>
+                            </li>
+                            <li class="flex items-center gap-3 font-body text-sm text-text-muted">
+                                <span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                                <span>Corrección técnica instantánea de ejercicios</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-8">
+                        <button onclick="selectPlan('Presencial')" class="w-full py-4 border border-white/20 hover:border-primary text-text-primary hover:bg-primary font-display text-xs font-black uppercase tracking-widest transition-all duration-300">
+                            CONSULTAR CUPOS
+                        </button>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Cómo Funciona Section -->
+    <section class="relative py-24 overflow-hidden" id="como-funciona">
+
+        <!-- Fondo cinematográfico con overlay -->
+        <div class="absolute inset-0 z-0" aria-hidden="true">
+            <img src="fondo.jpeg" alt="" class="w-full h-full object-cover object-center"/>
+            <div class="absolute inset-0 bg-black/65"></div>
+        </div>
+
+        <!-- Contenido de la sección -->
+        <div class="relative z-10 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+        <div class="text-center mb-20 scroll-reveal">
+            <span class="text-primary font-display font-bold text-xs uppercase tracking-[0.3em]">PASO A PASO</span>
+            <h2 class="font-display font-black text-3xl md:text-5xl uppercase tracking-tighter mt-3">
+                EL CAMINO HACIA TU TRANSFORMACIÓN
+            </h2>
+            <p class="font-body text-text-muted mt-4 max-w-xl mx-auto">
+                Nuestra metodología estructurada te guiará de manera segura e inteligente hacia tu objetivo físico.
+            </p>
+        </div>
+
+        <div class="relative flex flex-col items-center gap-12 w-full max-w-4xl mx-auto" id="method-section">
+            <!-- Central Vertical Connector Line (Desktop) -->
+            <div class="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-0.5 bg-white/5 hidden md:block overflow-hidden">
+                <div class="w-full bg-primary h-0 opacity-0 transition-all" id="method-line"></div>
+            </div>
+            
+            <!-- Step 1 -->
+            <div class="relative w-full md:w-[45%] md:mr-auto flex flex-col md:text-right group scroll-reveal">
+                <div class="absolute -top-6 -right-10 md:-right-16 font-display text-8xl font-black text-primary/5 select-none pointer-events-none">01</div>
+                <div class="bg-bg-secondary p-8 border-r-4 border-primary hover:border-white transition-all duration-300 shadow-xl">
+                    <h3 class="font-display text-lg font-black uppercase text-primary mb-2">1. Contacto Inicial</h3>
+                    <p class="font-body text-sm text-text-muted leading-relaxed">
+                        Completa el formulario en esta web o escríbenos directamente por WhatsApp indicando tu punto de partida e interés.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Step 2 -->
+            <div class="relative w-full md:w-[45%] md:ml-auto flex flex-col md:text-left group scroll-reveal">
+                <div class="absolute -top-6 -left-10 md:-left-16 font-display text-8xl font-black text-primary/5 select-none pointer-events-none">02</div>
+                <div class="bg-bg-secondary p-8 border-l-4 border-primary hover:border-white transition-all duration-300 shadow-xl">
+                    <h3 class="font-display text-lg font-black uppercase text-primary mb-2">2. Evaluación de Biotipo</h3>
+                    <p class="font-body text-sm text-text-muted leading-relaxed">
+                        Evaluamos tu estado físico actual, nivel, lesiones previas, hábitos alimenticios y definimos juntos tus objetivos reales.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Step 3 -->
+            <div class="relative w-full md:w-[45%] md:mr-auto flex flex-col md:text-right group scroll-reveal">
+                <div class="absolute -top-6 -right-10 md:-right-16 font-display text-8xl font-black text-primary/5 select-none pointer-events-none">03</div>
+                <div class="bg-bg-secondary p-8 border-r-4 border-primary hover:border-white transition-all duration-300 shadow-xl">
+                    <h3 class="font-display text-lg font-black uppercase text-primary mb-2">3. Entrega de Planes</h3>
+                    <p class="font-body text-sm text-text-muted leading-relaxed">
+                        Recibes tu plan nutricional detallado en gramos y macros, junto con la rutina de ejercicios explicada paso a paso.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Step 4 -->
+            <div class="relative w-full md:w-[45%] md:ml-auto flex flex-col md:text-left group scroll-reveal">
+                <div class="absolute -top-6 -left-10 md:-left-16 font-display text-8xl font-black text-primary/5 select-none pointer-events-none">04</div>
+                <div class="bg-bg-secondary p-8 border-l-4 border-primary hover:border-white transition-all duration-300 shadow-xl">
+                    <h3 class="font-display text-lg font-black uppercase text-primary mb-2">4. Monitoreo y Ajustes</h3>
+                    <p class="font-body text-sm text-text-muted leading-relaxed">
+                        Comienzas a entrenar y alimentarte. Cada semana reportas tus avances para que Fabián haga los ajustes requeridos.
+                    </p>
+                </div>
+            </div>
+        </div>
+        </div><!-- fin contenido z-10 -->
+    </section>
+
+    <!-- Instagram Section -->
+    <section class="py-24 max-w-container-max mx-auto px-margin-mobile">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 scroll-reveal gap-4">
+            <div>
+                <span class="text-primary font-display font-bold text-xs uppercase tracking-[0.3em]">SÍGUENOS EN REDES</span>
+                <a href="https://www.instagram.com/wolf_classic_gym/" target="_blank" rel="noopener noreferrer">
+                    <h2 class="font-display font-black text-3xl md:text-5xl uppercase tracking-tighter mt-3 hover:text-primary transition-colors duration-200">@WOLF_CLASSIC_GYM</h2>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Collage asimétrico de fotos del gimnasio (solo decorativo, sin links) -->
+        <div class="gym-collage reveal-cascade">
+            <!-- Foto 1: columna izquierda, ocupa 2 filas (tall) -->
+            <div class="collage-item bg-surface-container overflow-hidden border border-white/5">
+                <img alt="Interior del gimnasio Wolff Classic Gym" class="w-full h-full object-cover object-center" src="gym 1 (1).jpeg" loading="lazy"/>
+            </div>
+            <!-- Foto 2: centro fila 1 -->
+            <div class="collage-item bg-surface-container overflow-hidden border border-white/5">
+                <img alt="Zona de pesas Wolff Classic Gym" class="w-full h-full object-cover object-top" src="gym 1 (2).jpeg" loading="lazy"/>
+            </div>
+            <!-- Foto 3: derecha fila 1 -->
+            <div class="collage-item bg-surface-container overflow-hidden border border-white/5">
+                <img alt="Equipamiento del gimnasio Wolff Classic Gym" class="w-full h-full object-cover object-center" src="gym 1 (3).jpeg" loading="lazy"/>
+            </div>
+            <!-- Foto 4: ancha, ocupa columnas 2-3 fila 2 -->
+            <div class="collage-item bg-surface-container overflow-hidden border border-white/5">
+                <img alt="Área de entrenamiento Wolff Classic Gym" class="w-full h-full object-cover object-center" src="gym 1 (4).jpeg" loading="lazy"/>
+            </div>
+            <!-- Foto 5: columna izquierda fila 3 -->
+            <div class="collage-item bg-surface-container overflow-hidden border border-white/5">
+                <img alt="Entrenamiento en Wolff Classic Gym" class="w-full h-full object-cover object-center" src="gym 1 (5).jpeg" loading="lazy"/>
+            </div>
+            <!-- Foto 6: ancha, ocupa columnas 2-3 fila 3 -->
+            <div class="collage-item bg-surface-container overflow-hidden border border-white/5">
+                <img alt="Instalaciones Wolff Classic Gym" class="w-full h-full object-cover object-center" src="gym 1 (6).jpeg" loading="lazy"/>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Contact Form Section -->
+    <section class="py-24 bg-bg-secondary border-t border-white/5" id="contacto">
+        <div class="max-w-2xl mx-auto px-margin-mobile">
+            <div class="text-center mb-12 scroll-reveal">
+                <span class="text-primary font-display font-bold text-xs uppercase tracking-[0.3em]">ÚNETE A LA MANADA</span>
+                <h2 class="font-display font-black text-3xl md:text-5xl uppercase tracking-tighter mt-3 text-glow-red">
+                    CONSTRUYE TU PLAN
+                </h2>
+                <p class="font-body text-text-muted mt-4">
+                    Completa tus datos para pre-configurar tu consulta con Fabián y enviarla por WhatsApp al instante.
+                </p>
+            </div>
+            
+            <form id="whatsapp-form" class="flex flex-col gap-6 bg-background p-8 border border-white/5 shadow-2xl scroll-reveal">
+                <!-- Nombre -->
+                <div class="flex flex-col gap-2">
+                    <label for="form-name" class="font-display text-xs font-bold uppercase tracking-widest text-text-muted">
+                        Tu Nombre Completo
+                    </label>
+                    <input type="text" id="form-name" required placeholder="Ej: Rolando González" class="w-full bg-[#161616] border-b-2 border-white/10 focus:border-primary text-text-primary px-4 py-3 outline-none transition-colors duration-300 placeholder-white/20 focus:ring-0 rounded-none"/>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Edad -->
+                    <div class="flex flex-col gap-2">
+                        <label for="form-age" class="font-display text-xs font-bold uppercase tracking-widest text-text-muted">
+                            Tu Edad (Años)
+                        </label>
+                        <input type="number" id="form-age" required min="14" max="90" placeholder="Ej: 28" class="w-full bg-[#161616] border-b-2 border-white/10 focus:border-primary text-text-primary px-4 py-3 outline-none transition-colors duration-300 placeholder-white/20 focus:ring-0 rounded-none"/>
+                    </div>
+                    
+                    <!-- Objetivo -->
+                    <div class="flex flex-col gap-2">
+                        <label for="form-goal" class="font-display text-xs font-bold uppercase tracking-widest text-text-muted">
+                            Tu Objetivo Principal
+                        </label>
+                        <select id="form-goal" class="w-full bg-[#161616] border-b-2 border-white/10 focus:border-primary text-text-primary px-4 py-3 outline-none transition-colors duration-300 focus:ring-0 rounded-none">
+                            <option value="Pérdida de Grasa">Pérdida de Grasa</option>
+                            <option value="Recomposición Corporal">Recomposición Corporal</option>
+                            <option value="Ganancia de Masa Muscular">Ganancia de Masa Muscular</option>
+                            <option value="Preparación Deportiva">Preparación Deportiva de Competición</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- Plan -->
+                <div class="flex flex-col gap-2">
+                    <label for="form-plan" class="font-display text-xs font-bold uppercase tracking-widest text-text-muted">
+                        Plan de Interés
+                    </label>
+                    <select id="form-plan" class="w-full bg-[#161616] border-b-2 border-white/10 focus:border-primary text-text-primary px-4 py-3 outline-none transition-colors duration-300 focus:ring-0 rounded-none">
+                        <option value="Plan 1 Mes ($40k CLP)">Plan 1 Mes - $40.000 CLP</option>
+                        <option value="Plan 3 Meses ($105k CLP)">Plan 3 Meses (Popular) - $105.000 CLP</option>
+                        <option value="Presencial (Colbún)">Presencial - Desde $20.000 CLP/Sesión</option>
+                    </select>
+                </div>
+                
+                <!-- Submit -->
+                <button type="submit" class="w-full bg-primary hover:bg-primary-alt text-text-primary font-display font-black text-xs uppercase tracking-widest py-5 flex items-center justify-center gap-3 border border-primary transition-all duration-300 btn-glow-intense active:scale-[0.98] mt-4">
+                    <span class="material-symbols-outlined text-xl">chat</span>
+                    <span>ENVIAR CONSULTA POR WHATSAPP</span>
+                </button>
+                
+                <p class="text-center font-display text-[9px] uppercase tracking-widest text-text-muted/50">
+                    *Al presionar se abrirá un chat directo con Fabián en WhatsApp con los datos completados.
+                </p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-surface-container-lowest border-t border-white/5 py-16 px-margin-mobile md:px-margin-desktop">
+        <div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+            
+            <div class="md:col-span-6 flex flex-col gap-4">
+                <span class="font-display text-xl md:text-2xl font-black text-primary tracking-widest uppercase">WOLFF ATHLETE</span>
+                <p class="font-body text-text-muted text-sm max-w-sm leading-relaxed mt-2">
+                    Preparación física profesional. Forjando disciplina, construyendo atletas de alto rendimiento con ciencia y esfuerzo.
+                </p>
+                <div class="flex items-center gap-2 text-text-muted/80 text-xs font-mono mt-2">
+                    <span class="material-symbols-outlined text-primary text-base">location_on</span>
+                    <span>Colbún, Maule, Chile.</span>
+                </div>
+            </div>
+            
+            <div class="md:col-span-3 flex flex-col gap-4">
+                <h4 class="font-display text-xs font-black uppercase tracking-widest text-primary">ENLACES</h4>
+                <a class="font-body text-sm text-text-muted hover:text-text-primary transition-colors" href="#sobre">Fabián</a>
+                <a class="font-body text-sm text-text-muted hover:text-text-primary transition-colors" href="#pilares">Método de 3 Pilares</a>
+                <a class="font-body text-sm text-text-muted hover:text-text-primary transition-colors" href="#resultados">Resultados de Alumnos</a>
+                <a class="font-body text-sm text-text-muted hover:text-text-primary transition-colors" href="#planes">Planes y Precios</a>
+            </div>
+            
+            <div class="md:col-span-3 flex flex-col gap-4">
+                <h4 class="font-display text-xs font-black uppercase tracking-widest text-primary">CONTACTO</h4>
+                <a class="font-body text-sm text-text-muted hover:text-text-primary transition-colors flex items-center gap-2" href="https://www.instagram.com/wolf.athlete.team/" target="_blank">
+                    <span>Instagram</span>
+                </a>
+                <a class="font-body text-sm text-text-muted hover:text-text-primary transition-colors flex items-center gap-2" href="https://wa.me/56994159175" target="_blank" id="footer-wa-link">
+                    <span>WhatsApp Coach</span>
+                </a>
+            </div>
+            
+        </div>
+        
+        <div class="max-w-container-max mx-auto mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="font-display text-[10px] uppercase tracking-widest text-text-muted/50 text-center md:text-left">
+                © 2026 WOLFF ATHLETE TEAM. UNCOMPROMISING EXCELLENCE. DESARROLLADO EN CHILE.
+            </p>
+            <div class="flex gap-6">
+                <span class="font-display text-[9px] uppercase tracking-widest text-text-muted/40">CIENCIA</span>
+                <span class="font-display text-[9px] uppercase tracking-widest text-text-muted/40">DISCIPLINA</span>
+                <span class="font-display text-[9px] uppercase tracking-widest text-text-muted/40">FUERZA</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripting -->
+    <script>
+        // Set actual WhatsApp phone number to open direct contact (Chile +56 9)
+        const COACH_PHONE = "56994159175";
+        
+        // Update generic footer/nav links if required
+        document.getElementById("footer-wa-link").href = `https://wa.me/${COACH_PHONE}`;
+
+        // Hero particles effect (Energy sparks floating up)
+        const particlesContainer = document.getElementById('particles-container');
+        if (particlesContainer) {
+            const particleCount = 45;
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'hero-particle';
+                
+                const isSmoke = Math.random() > 0.7;
+                const size = isSmoke ? 12 + Math.random() * 30 : 1.5 + Math.random() * 2.5;
+                const duration = 5 + Math.random() * 7;
+                const delay = Math.random() * 8;
+                
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.bottom = `-50px`;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.backgroundColor = isSmoke ? 'rgba(50, 50, 50, 0.35)' : '#ff0000';
+                if (isSmoke) {
+                    particle.style.filter = 'blur(10px)';
+                }
+                particle.style.animation = `float-up ${duration}s linear ${delay}s infinite`;
+                
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+
+        // Ambient Mouse Tracking for Light Leaks
+        const leak1 = document.getElementById('leak-1');
+        const leak2 = document.getElementById('leak-2');
+        if (leak1 && leak2) {
+            document.addEventListener('mousemove', (e) => {
+                const x = e.clientX / 12;
+                const y = e.clientY / 12;
+                leak1.style.transform = `translate(${x}px, ${y}px)`;
+                leak2.style.transform = `translate(${-x}px, ${-y}px)`;
+            });
+        }
+
+        // Scroll Reveal and Stats Counters Animation
+        const revealOptions = { 
+            root: null,
+            threshold: 0.15,
+            rootMargin: '0px'
+        };
+        
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal-active');
+                    
+                    // If is stats section, animate counts
+                    if (entry.target.id === 'sobre') {
+                        const counters = entry.target.querySelectorAll('.stat-counter');
+                        counters.forEach(counter => animateCounter(counter));
+                    }
+                    
+                    // If is methodology section, animate connecting line
+                    if (entry.target.id === 'como-funciona') {
+                        const line = document.getElementById('method-line');
+                        if (line) {
+                            line.classList.add('method-line-active');
+                        }
+                    }
+                    
+                    // Once animated, stop observing
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, revealOptions);
+
+        document.querySelectorAll('.scroll-reveal, .reveal-cascade').forEach(element => {
+            revealObserver.observe(element);
+        });
+
+        // Numeric counters animation logic
+        function animateCounter(counter) {
+            if (counter.classList.contains('is-counted')) return;
+            counter.classList.add('is-counted');
+            
+            const target = parseInt(counter.getAttribute('data-target'));
+            const duration = 2000; // 2 seconds
+            let startTime = null;
+
+            function step(timestamp) {
+                if (!startTime) startTime = timestamp;
+                const progress = Math.min((timestamp - startTime) / duration, 1);
+                const currentValue = Math.floor(progress * target);
+                
+                if (counter.innerText.includes('%')) {
+                    counter.innerText = currentValue + '%';
+                } else if (counter.innerText.includes('+')) {
+                    counter.innerText = '+' + currentValue;
+                } else {
+                    counter.innerText = currentValue;
+                }
+
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            }
+            window.requestAnimationFrame(step);
+        }
+
+        // Navigation drawer logic (Mobile menu toggle)
+        const menuBtn = document.getElementById('menu-btn');
+        const closeBtn = document.getElementById('close-btn');
+        const drawer = document.getElementById('drawer');
+        const drawerContent = document.getElementById('drawer-content');
+
+        if (menuBtn && closeBtn && drawer && drawerContent) {
+            menuBtn.onclick = () => {
+                drawer.classList.remove('hidden');
+                setTimeout(() => {
+                    drawerContent.classList.remove('-translate-x-full');
+                }, 10);
+            };
+
+            const closeDrawer = () => {
+                drawerContent.classList.add('-translate-x-full');
+                setTimeout(() => {
+                    drawer.classList.add('hidden');
+                }, 300);
+            };
+
+            closeBtn.onclick = closeDrawer;
+            
+            // Close when clicking overlay backdrop
+            drawer.onclick = (e) => {
+                if (e.target === drawer) {
+                    closeDrawer();
+                }
+            };
+            
+            window.closeDrawer = closeDrawer; // Expose globally to trigger on link click
+        }
+
+        // Hide/Show Header on scroll (reduces page noise)
+        let lastScrollTop = 0;
+        const header = document.getElementById('main-header');
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+            if (currentScroll <= 0) {
+                header.classList.remove('-translate-y-full');
+                return;
+            }
+            if (currentScroll > lastScrollTop && currentScroll > 150) {
+                // Scroll Down: hide header
+                header.classList.add('-translate-y-full');
+            } else {
+                // Scroll Up: show header
+                header.classList.remove('-translate-y-full');
+            }
+            lastScrollTop = currentScroll;
+        });
+
+        // Plan Selection Helper (pre-selects form option and scrolls)
+        function selectPlan(planName) {
+            const planSelect = document.getElementById('form-plan');
+            const contactSection = document.getElementById('contacto');
+            if (planSelect && contactSection) {
+                // Map values
+                if (planName === '1 Mes') {
+                    planSelect.value = 'Plan 1 Mes ($40k CLP)';
+                } else if (planName === '3 Meses') {
+                    planSelect.value = 'Plan 3 Meses ($105k CLP)';
+                } else if (planName === 'Presencial') {
+                    planSelect.value = 'Presencial (Colbún)';
+                }
+                
+                // Smooth scroll to contact form
+                contactSection.scrollIntoView({ behavior: 'smooth' });
+                
+                // Add a small temporary highlight to the form
+                const formElement = document.getElementById('whatsapp-form');
+                formElement.classList.add('ring-2', 'ring-primary');
+                setTimeout(() => {
+                    formElement.classList.remove('ring-2', 'ring-primary');
+                }, 1500);
+            }
+        }
+
+        // WhatsApp Custom Message Builder & Redirection Form
+        const whatsappForm = document.getElementById('whatsapp-form');
+        if (whatsappForm) {
+            whatsappForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                const name = document.getElementById('form-name').value;
+                const age = document.getElementById('form-age').value;
+                const goal = document.getElementById('form-goal').value;
+                const plan = document.getElementById('form-plan').value;
+                
+                // Construct the URL encoded WhatsApp message
+                const messageText = `Hola Fabián, me interesa unirme a Wolff Athlete Team. Mi nombre es *${name}*, tengo *${age}* años, mi objetivo es *${goal}* y me interesa el *${plan}*. ¿Me podrías dar más información para iniciar?`;
+                const encodedText = encodeURIComponent(messageText);
+                
+                const whatsappUrl = `https://wa.me/${COACH_PHONE}?text=${encodedText}`;
+                
+                // Redirect to WhatsApp
+                window.open(whatsappUrl, '_blank');
+            });
+        }
+    </script>
+</body>
+</html>
