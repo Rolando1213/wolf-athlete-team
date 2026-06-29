@@ -120,6 +120,8 @@
                 background-size: cover;
                 background-position: right center;
                 background-repeat: no-repeat;
+                align-items: flex-start !important;
+                padding-top: 0 !important;
             }
             .hero-bg-img {
                 display: none;
@@ -128,10 +130,11 @@
             .hero-section .relative.z-30 {
                 align-items: center;
                 text-align: center;
-                padding-top: 10px;
+                padding-top: 8px;
                 padding-left: 16px;
                 padding-right: 16px;
                 justify-content: flex-start;
+                align-self: flex-start;
             }
             .hero-line1, .hero-version, .hero-divider {
                 align-self: center;
@@ -147,7 +150,8 @@
             /* Subtítulo oculto en mobile */
             .hero-subtitle { display: none; }
             /* Botón oculto en mobile */
-            .hero-btn { display: none; }
+            .hero-btn { display: none !important; }
+            .hero-section .flex { flex-wrap: nowrap; }
         }
         
         .crimson-glow {
