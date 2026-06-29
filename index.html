@@ -124,13 +124,14 @@
             .hero-bg-img {
                 display: none;
             }
-            /* Centrar y subir bloque de texto */
+            /* Subir título al tope del hero */
             .hero-section .relative.z-30 {
                 align-items: center;
                 text-align: center;
-                padding-top: 2rem;
+                padding-top: 20px;
                 padding-left: 16px;
                 padding-right: 16px;
+                justify-content: flex-start;
             }
             .hero-line1, .hero-version, .hero-divider {
                 align-self: center;
@@ -143,23 +144,10 @@
             .hero-version {
                 font-size: 79px;
             }
-            /* Subtítulo */
-            .hero-subtitle {
-                font-size: 11px;
-                text-align: left;
-                max-width: 260px;
-                margin: 0 0 2.5rem 0;
-            }
-            /* Botón */
-            .hero-btn {
-                display: block;
-                padding: 8px 18px;
-                font-size: 12px;
-                width: auto;
-                max-width: none;
-                margin: 0 auto;
-                align-self: center;
-            }
+            /* Subtítulo oculto en mobile */
+            .hero-subtitle { display: none; }
+            /* Botón oculto en mobile */
+            .hero-btn { display: none; }
         }
         
         .crimson-glow {
